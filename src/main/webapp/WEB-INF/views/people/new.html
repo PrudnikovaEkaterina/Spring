@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль пользователя</title>
+</head>
+<body>
+<!--Это (Thymeleaf) форма, поэтому в нее нужно передавать тот объект, для которго эта форма создается, в нашем случае Person-->
+<!--Данные из формы отправятся на контроллер с методом POST на адрес /people-->
+<form th:method="POST" th:action="@{/people}" th:object="${person}">
+<!--  th:object="${newPerson} - возвращается из контроллера newPerson, где аннтотация @ModelAttribute("newPerson") Person person
+создает нового человека, добавляет его в модель по ключу newPerson-->
+  <label for="name">Enter your name </label>
+  <input type="text" th:field="*{name}" id="name"/>
+<!--  th:field="*{name}" - это поля класса Person, которым будут соответсвовать поля формы. -->
+<!--  После того, как пользователь кликнет форму отправить, контроллер create и его аннтотация в параметрах метода-->
+<!--  @ModelAttribute("newPerson") Person person создаст нового пользователя, назначит ему эти значения.
+Затем мы сохраним пользователя в базе-personDAO.save(person);-->
+  <br/>
+  <br/>
+
+  <label for="surname">Enter your surname </label>
+  <input type="text" th:field="*{surname}" id="surname"/>
+  <br/>
+  <br/>
+
+  <label for="email">Enter your email </label>
+  <input type="text" th:field="*{email}" id="email"/>
+  <br/>
+  <br/>
+
+  <input type="submit" value="Add Person"/>
+</form>
+</body>
+</html>
