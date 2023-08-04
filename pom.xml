@@ -52,11 +52,20 @@
       <version>${spring.version}</version>
     </dependency>
 
+    <!-- Шаблонизатор -->
     <dependency>
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf-spring6</artifactId>
       <version>3.1.2.RELEASE</version>
     </dependency>
+
+    <!-- Валидация форм -->
+    <dependency>
+      <groupId>org.hibernate.validator</groupId>
+      <artifactId>hibernate-validator</artifactId>
+      <version>8.0.1.Final</version>
+    </dependency>
+
 
     <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 <!--    <dependency>-->
@@ -67,6 +76,7 @@
 <!--    </dependency>-->
 
     <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
+    <!-- Нужно для того, чтобы джава сервлет фильтровал запросы с методами PATCH DELETE -->
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
